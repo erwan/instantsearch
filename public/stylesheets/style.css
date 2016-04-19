@@ -1,0 +1,25 @@
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: Lato, sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+}
+
+a {
+    color: #FDBD58;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 3.4rem;
+    margin-bottom: 1.25rem;
+}
+

@@ -1,0 +1,28 @@
+extends ./layout.jade
+
+block body
+  div
+    h1 Instant search
+    input(id='search')
+    ul#results
+    
+    script(type='text/javascript').
+
+      var $input = $("#search");
+      var $results = $("#results");
+
+      function setItems(items) {
+        $results.html("");
+        items.forEach(function(item) {
+          $results.append('<li>' + item.slug + '</li>');
+        });
+      }
+    
+      $(function() {
+        $input.on("input propertychange paste", _.debounce(function() {
+          console.log("updated!");
+          $.get('/search', {q: $input.val()}, function(result) {
+            setItems(result);
+          });
+        }, 250));
+      });
